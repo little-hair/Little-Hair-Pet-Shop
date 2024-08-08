@@ -3,7 +3,6 @@ const modalCart = document.querySelector('.rigth-bar-menu');
 
 // Função para criar o Menu
 modalCart.innerHTML = `
-        <!-- Barra de Menu Lateral Direita -->
         <h3>Menu</h3>
 
         <nav class="nav">
@@ -32,7 +31,7 @@ modalCart.innerHTML = `
                             <img src="./Images/Pet.png" class="" alt="Pet Planos">
                         </span>
                     </div>
-                    <a href="#">Pet Planos</a>
+                    <a href="./Plans.html">Pet Planos</a>
                 </li>
 
                 <li class="hover">
@@ -41,7 +40,7 @@ modalCart.innerHTML = `
                             <img src="./Images/Conta.png" class="" alt="Indique o Pet Shop e Ganhe">
                         </span>
                     </div>
-                    <a href="./Accounts.html">Indique e Ganhe</a>
+                    <a href="./Share.html">Indique e Ganhe</a>
                 </li>
 
                 <li class="hover">
@@ -50,7 +49,7 @@ modalCart.innerHTML = `
                             <img src="./Images/Cart.png" class="" alt="Carrinho de Compras">
                         </span>
                     </div>
-                    <a href="./Accounts.html">Carrinho</a>
+                    <a href="./Cart.html">Carrinho</a>
                 </li>
             </ul>
         </nav>
