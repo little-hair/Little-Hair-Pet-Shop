@@ -331,6 +331,18 @@ input[type="text"] {
   transition: background-color var(--transition-speed) var(--transition-ease);
 }
 
+.btn-style-03 {
+  padding: var(--spacing-lg) 0;
+  background-color: var(--primary-color);
+  color: var(--text-white-color);
+  border: none;
+  border-radius: var(--border-radius-md);
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) var(--transition-ease);
+}
+
 .btn-style-01:hover, .btn-style-02:hover {
   background-color: #7d33e4;
 }

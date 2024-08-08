@@ -54,7 +54,7 @@ modalCart.innerHTML = `
             </ul>
         </nav>
 
-        <button type="button" data-url="Accounts" class="btn-style-01">Criar ou Entrar</button>
+        <a href="./Accounts.html" class="btn-style-03">Criar ou Entrar</a>
     `;
 
 btnOpenCart.addEventListener('click', () => { modalCart.classList.toggle('off') });
