@@ -1,0 +1,33 @@
+.plan-content {
+    padding: var(--spacing-md);
+    flex: 1 1 calc(33.333% - 16px);
+    border-radius: var(--border-radius-lg);
+    background-color: var(--text-white-color);
+    min-height: 130px;
+    max-width: 400px;
+    min-width: 250px;
+    cursor: pointer;
+}
+
+.plan,
+.li-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.plan-price,
+.month {
+    color: var(--primary-color);
+}
+
+.plan-info {
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius-md);
+}
+
+main button.btn-style-01 {
+    width: 100%;
+}

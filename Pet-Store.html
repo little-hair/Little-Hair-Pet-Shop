@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Styles/style.css">
+    <link rel="stylesheet" href="./Styles/style-store.css">
+    <link rel="stylesheet" href="./Styles/style-media-queries.css">
+    <link rel="stylesheet" href="./Styles/style-products.css">
+    <link rel="stylesheet" href="Styles/style-head.css">
+    <!--  Espaço dos links de Fontes. Não altere as urls  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nerko+One&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!--  Espaço dos links de Fontes. Não altere as urls  -->
+    <title>Little Hair - Store</title>
+</head>
+
+<body>
+    <!-- Cabeçalho com a barra de navegação -->
+    <header>
+        <div class="logo">
+            <img src="./Images/Logo.png" alt="Little Hair">
+        </div>
+
+        <nav class="nav">
+            <ul>
+                <li class="hover">
+                    <div class="home icon off">
+                        <span>
+                            <img src="./Images/Home.png" class="" alt="Home (Início)">
+                        </span>
+                    </div>
+                    <a href="./Index.html">Início</a>
+                </li>
+
+                <li class="hover">
+                    <div class="store icon on active">
+                        <span>
+                            <img src="./Images/Store.png" class="" alt="Loja para pets">
+                        </span>
+                    </div>
+                    <a href="./Pet-Store.html">Pet Store</a>
+                </li>
+
+                <li class="hover">
+                    <div class="plans icon off">
+                        <span>
+                            <img src="./Images/Pet.png" class="" alt="Pet Planos">
+                        </span>
+                    </div>
+                    <a href="/Plans.html">Pet Planos</a>
+                </li>
+
+                <li class="hover">
+                    <div class="indicate icon off">
+                        <span>
+                            <img src="./Images/Conta.png" class="" alt="Indique o Pet Shop e Ganhe">
+                        </span>
+                    </div>
+                    <a href="./Share.html">Indique e Ganhe</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="last-buttons">
+            <button type="button" data-url="Accounts" class="btn-style-01 link-accounts">
+                Criar ou Entrar
+            </button>
+
+            <div class="cart icon hover link" data-url="Cart">
+                <img src="./Images/Cart.png" alt="Little Hair">
+            </div>
+
+            <div class="burger icon hover">
+                <img src="./Images/Icons/Burger.png" alt="Botão de Opções">
+            </div>
+        </div>
+    </header>
+
+    <article class="content-start">
+        <!-- Título para Seções -->
+        <div class="title-section">
+            <h1>Produtos</h1>
+        </div>
+
+        <!-- Pesquisa por produtos -->
+        <div class="search-product">
+            <form action="" method="get" class="form-search" id="form-search">
+                <label for="ipt-search" class="label-ipt-search">
+                    <input type="text" class="ipt-search" name="ipt-search" placeholder="Pesquisar por produto...">
+                </label>
+
+                <label for="btn-search" class="btn-search-lbl">
+                    <input type="submit" name="btn-search" class="btn" id="btn-search" value="Buscar" />
+
+                    <div class="search-icon icon hover">
+                        <img src="./Images/Search.png" alt="Pesquisar">
+                    </div>
+                </label>
+            </form>
+        </div>
+    </article>
+
+    <!-- Conteúdo principal -->
+    <main class="main">
+        <!-- Barra de Filtro -->
+        <aside class="filter">
+            <section class="sec-header">
+                <p class="filter-title">Filtrar Produtos</p>
+
+                <div class="filter-btn">
+                    <label for="clear-btn" class="ipt-filter">
+                        <input type="button" name="clear-btn" value="Limpar Filtros">
+                    </label>
+                </div>
+            </section>
+
+            <section class="sec-category">
+                <p class="filter-title">Categorias</p>
+
+                <div class="filter-btn">
+                    <label for="dogs-btn" class="ipt-filter">
+                        <input type="button" name="dogs-btn" value="Cães">
+                    </label>
+                </div>
+
+                <div class="filter-btn">
+                    <label for="cats-btn" class="ipt-filter">
+                        <input type="button" name="cats-btn" value="Gatos">
+                    </label>
+                </div>
+
+                <div class="filter-btn">
+                    <label for="fish-btn" class="ipt-filter">
+                        <input type="button" name="fish-btn" value="Peixes">
+                    </label>
+                </div>
+
+                <div class="filter-btn">
+                    <label for="hamster-btn" class="ipt-filter">
+                        <input type="button" name="hamster-btn" value="Hamster">
+                    </label>
+                </div>
+            </section>
+
+            <section class="sec-price">
+                <p class="filter-title">Faixa de Preço</p>
+
+                <div class="filter-btn">
+                    <div class="label">
+                        <label for="ipt-price-01" class="ipt-filter">
+                            <input type="checkbox" name="ipt-price-01">
+                            <span>Até R$ 50</span>
+                        </label>
+                    </div>
+
+                    <div class="label">
+                        <label for="ipt-price-02" class="ipt-filter">
+                            <input type="checkbox" name="ipt-price-02">
+                            <span>De R$ 51 a R$ 100</span>
+                        </label>
+                    </div>
+
+                    <div class="label">
+                        <label for="ipt-price-03" class="ipt-filter">
+                            <input type="checkbox" name="ipt-price-03">
+                            <span>De R$ 101 a R$ 150</span>
+                        </label>
+                    </div>
+
+                    <div class="label">
+                        <label for="ipt-price-04" class="ipt-filter">
+                            <input type="checkbox" name="ipt-price-04">
+                            <span>De R$ 151 a R$ 200</span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+        </aside>
+
+        <!-- Produtos -->
+        <section class="content-products">
+            <section class="main-products sec-prod">
+                <h3>Principais Produtos</h3>
+                <section class="flex-content">
+                    <article class="product-i" data-code="0001">
+                    </article>
+                    <article class="product-i" data-code="0002">
+                    </article>
+                    <article class="product-i" data-code="0003">
+                    </article>
+                    <article class="product-i" data-code="0004">
+                    </article>
+                    <article class="product-i" data-code="0005">
+                    </article>
+                </section>
+            </section>
+            <!-- Produtos -->
+            <section class="seller-products sec-prod">
+                <h3>Produtos Mais Vendidos</h3>
+                <section class="flex-content">
+                    <article class="product-i" data-code="0006">
+                    </article>
+                    <article class="product-i" data-code="0007">
+                    </article>
+                    <article class="product-i" data-code="0008">
+                    </article>
+                    <article class="product-i" data-code="0009">
+                    </article>
+                    <article class="product-i" data-code="0010">
+                    </article>
+                </section>
+            </section>
+            <!-- Resultados da Pesquisa -->
+            <section class="result-products off">
+                <h3 id="title-results-products">0</h3>
+                <section class="flex-content results-products"></section>
+                <button class="back-main-products btn-style-01">
+                    Voltar
+                </button>
+            </section>
+
+        </section>
+
+    </main>
+
+    <!-- Modal dos Produtos -->
+    <article class="off-modal buy-products"></article>
+
+    <aside class="rigth-bar-menu off">
+    </aside>
+
+    <footer>
+    </footer>
+
+</body>
+<script src="./Scripts/Script.js"></script>
+<script src="./Scripts/Elements/Footer.js"></script>
+<script src="./Scripts/Elements/Menu.js"></script>
+<script type="module" src="./Scripts/DataBase.js" crossorigin="anonymous"></script>
+<script type="module" src="./Scripts/LoadProducts.js"></script>
+<script type="module" src="./Scripts/SearchProducts.js"></script>
+
+</html>

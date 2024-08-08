@@ -1,0 +1,171 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-optical-sizing: auto;
+}
+
+/* TODAS as variáveis globais que serão utilizadas em todo o projeto! */
+:root {
+    /* Cores */
+    --primary-color: #9747FF;
+    /* Azul Royal */
+    --secondary-color: #e2e2e2;
+    /* Dourado */
+    --background-color: #F0F0F0;
+    /* Cinza Claro */
+    --text-dark-color: #333333;
+    /* Preto Cinza */
+    --text-white-color: #FFFFFF;
+    /* Branco */
+    --accent-color: #FF69B4;
+    /* Rosa Choque */
+    --hover-color: #EEEDF2;
+    /* Azul Claro */
+
+    /* Tipografia */
+    --font-size-extra: 48px;
+    --font-size-large: 24px;
+    --font-size-base: 16px;
+    --font-size-small: 14px;
+
+    /* Espaçamento (Baseado no Grid de 8px) */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+    --spacing-xl: 64px;
+
+    /* Bordas */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 16px;
+
+    /* Sombreamento */
+    --box-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --box-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --box-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+    /* Transições */
+    --transition-speed: 0.3s;
+    --transition-ease: ease-in-out;
+}
+
+/* Fim das Variáveis globais */
+
+body {
+    overflow-x: hidden;
+    background-color: var(--hover-color);
+}
+
+/* Estilo do Header */
+.form-login {
+    text-align: center;
+    margin-top: 10vh;
+}
+
+.header {
+    margin-bottom: var(--spacing-lg);
+}
+
+.header h1 {
+    font-family: "Nerko One", cursive;
+    font-size: var(--font-size-extra);
+    color: var(--primary-color);
+}
+
+/* Fim do Estilo do Header */
+
+/* Estilo do Main */
+article.main {
+    padding: var(--spacing-md);
+    background-color: var(--text-white-color);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    width: fit-content;
+    border-radius: var(--border-radius-lg);
+    margin: 0 auto;
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.16);
+}
+
+/* Lista de Opções */
+.login-options {
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.login-options ul,
+.login-options ul li {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.login-options ul {
+    flex-direction: column;
+}
+
+.login-options ul li {
+    list-style: none;
+    align-items: center;
+    padding: var(--spacing-md);
+    background-color: var(--hover-color);
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    user-select: none;
+    transition: background-color ease-in-out 0.5s;
+}
+
+span {
+    line-height: 0;
+}
+
+/* Formulário de Login */
+.receive-code form {
+    width: 100%;
+}
+
+label {
+    width: 100%;
+}
+
+input.e-mail {
+    width: 100%;
+    padding: var(--spacing-md);
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: var(--border-radius-md);
+    outline: none;
+}
+
+input.e-mail::placeholder {
+    color: var(--text-dark-color);
+}
+
+button.btn {
+    width: 100%;
+    padding: var(--spacing-md);
+    background-color: var(--primary-color);
+    font-weight: 600;
+    color: var(--text-white-color);
+    border: none;
+    border-radius: var(--border-radius-md);
+    outline: none;
+    margin-top: var(--spacing-sm);
+    cursor: pointer;
+    transition: background-color ease-in-out 0.5s;
+}
+
+/* Fim do Estilo do Main */
+
+/* Animação nas Opções */
+li.li-el:hover {
+    background-color: hsl(250, 11%, 89%);
+}
+
+button.btn:hover {
+    background-color: #7d33e4;
+}
+/* Fim da Animação nas Opções */

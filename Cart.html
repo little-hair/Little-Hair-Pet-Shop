@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Styles/style.css">
+    <link rel="stylesheet" href="./Styles/style-cart.css">
+    <link rel="stylesheet" href="./Styles/style-store.css">
+    <link rel="stylesheet" href="./Styles/style-media-queries.css">
+    <link rel="stylesheet" href="./Styles/style-products.css">
+    <!--  Espaço dos links de Fontes. Não altere as urls  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nerko+One&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!--  Espaço dos links de Fontes. Não altere as urls  -->
+    <title>Little Hair - Carrinho de Produtos</title>
+</head>
+
+<body>
+    <!-- Cabeçalho com a barra de navegação -->
+    <header>
+        <div class="logo">
+            <img src="./Images/Logo.png" alt="Little Hair">
+        </div>
+
+        <nav class="nav">
+            <ul>
+                <li class="hover">
+                    <div class="home icon off">
+                        <span>
+                            <img src="./Images/Home.png" class="" alt="Home (Início)">
+                        </span>
+                    </div>
+                    <a href="./Index.html">Início</a>
+                </li>
+
+                <li class="hover">
+                    <div class="store icon on active">
+                        <span>
+                            <img src="./Images/Store.png" class="" alt="Loja para pets">
+                        </span>
+                    </div>
+                    <a href="./Pet-Store.html">Pet Store</a>
+                </li>
+
+                <li class="hover">
+                    <div class="plans icon off">
+                        <span>
+                            <img src="./Images/Pet.png" class="" alt="Pet Planos">
+                        </span>
+                    </div>
+                    <a href="/Plans.html">Pet Planos</a>
+                </li>
+
+                <li class="hover">
+                    <div class="indicate icon off">
+                        <span>
+                            <img src="./Images/Conta.png" class="" alt="Indique o Pet Shop e Ganhe">
+                        </span>
+                    </div>
+                    <a href="./Share.html">Indique e Ganhe</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="last-buttons">
+            <button type="button" data-url="Accounts" class="btn-style-01 link-accounts">
+                Criar ou Entrar
+            </button>
+
+            <div class="cart icon hover link" data-url="Cart">
+                <img src="./Images/Cart.png" alt="Little Hair">
+            </div>
+
+            <div class="burger icon hover">
+                <img src="./Images/Icons/Burger.png" alt="Botão de Opções">
+            </div>
+        </div>
+    </header>
+
+    <h3 class="title-sec">Carrinho</h3>
+
+    <!-- Conteúdo principal -->
+    <main class="content-products">
+        <!-- Produtos do carrinho e Resumo-->
+        <section class="main-products" style="display: none;">
+            <section class="main-side-left">
+                <!-- Produtos do carrinho -->
+                <div class="cart-products">
+                    <h3 class="title-sec-info">Produtos</h3>
+                </div>
+
+                <!-- Método de Pagamento -->
+                <div class="payments">
+                    <h3 class="title-sec-info">Formas de Pagamento</h3>
+                    <form action="" method="get">
+                        <!-- Cartão de Crédito -->
+                        <div class="payment-method">
+                            <input type="radio" id="payment-credit" name="payment" value="credit">
+                            <label for="payment-credit">
+                                <article class="payment-methods style-product">
+                                    <h4>Cartão de Crédito | Débito</h4>
+                                    <div class="card-method">
+                                        <input type="text" placeholder="Nome no cartão">
+                                        <input type="text" placeholder="Número do cartão">
+                                        <input type="text" placeholder="Código de segurança">
+                                        <input type="text" placeholder="Data de Expiração">
+                                        <button type="button" class="btn-style-01">Salvar Cartão</button>
+                                    </div>
+                                </article>
+                            </label>
+                        </div>
+
+                        <!-- Boleto Bancário -->
+                        <div class="payment-method">
+                            <input type="radio" id="payment-slip-bank" name="payment" value="slip-bank">
+                            <label for="payment-slip-bank">
+                                <article class="payment-methods style-product">
+                                    <h4>Boleto Bancário</h4>
+                                    <p>Vencimento em 3 dias úteis. Pedido será processado após pagamento.</p>
+                                </article>
+                            </label>
+                        </div>
+
+                        <!-- Pix -->
+                        <div class="payment-method">
+                            <input type="radio" id="payment-pix" name="payment" value="pix">
+                            <label for="payment-pix">
+                                <article class="payment-methods style-product">
+                                    <h4>Pix</h4>
+                                    <p>Um código Pix será gerado para o pagamento, válido por 30 minutos.</p>
+                                </article>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Frete -->
+                <div class="delivery">
+                    <h3 class="title-sec-info">Frete</h3>
+
+                    <form action="" method="get" class="style-product" id="delivery">
+                        <div class="card-method">
+                            <input type="text" placeholder="CEP">
+                            <input type="text" placeholder="Bairro">
+                            <input type="text" placeholder="Rua">
+                            <input type="text" placeholder="Número">
+                            <button type="button" class="btn-style-01">Salvar Endereço</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Desconto / Cupom -->
+                <div class="discount">
+                    <h3 class="title-sec-info">Descontos</h3>
+
+                    <form action="" method="get" class="style-product" id="discount">
+                        <div class="discount-sec">
+                            <input type="text" placeholder="Código do Cupom">
+                            <button type="button" class="btn-style-01">Aplicar Desconto</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section class="main-side-right">
+                <!-- Resumo dos Pedidos -->
+                <h3 class="title-sec-info">Resumo do Pedido</h3>
+                <div class="main-balance">
+                </div>
+            </section>
+        </section>
+    </main>
+</body>
+<script src="./Scripts/Script.js"></script>
+<script type="module" src="./Scripts/DataBase.js" crossorigin="anonymous"></script>
+<script type="module" src="./Scripts/Elements/Cart.js"></script>
+<script>
+    const ipt = document.querySelectorAll('input[type=radio]');
+    ipt.forEach((radio) => {
+        // Evento de mudança para cada rádio
+        radio.addEventListener('change', () => {
+            ipt.forEach((otherRadio) => {
+                const otherPaymentMethod = otherRadio.nextElementSibling.querySelector('.payment-methods');
+                if (otherRadio.checked) {
+                    otherPaymentMethod.style.backgroundColor = 'var(--hover-color)';
+                } else {
+                    otherPaymentMethod.style.backgroundColor = 'var(--text-white-color)';
+                }
+            });
+        });
+    });
+
+    // Configuração inicial para definir o fundo corretamente
+    window.addEventListener('load', () => {
+        ipt.forEach((radio) => {
+            const paymentMethod = radio.nextElementSibling.querySelector('.payment-methods');
+            if (radio.checked) {
+                paymentMethod.style.backgroundColor = 'var(--hover-color)';
+            } else {
+                paymentMethod.style.backgroundColor = 'var(--text-white-color)';
+            }
+        });
+    });
+
+</script>
+
+</html>

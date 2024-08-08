@@ -1,0 +1,114 @@
+main.content-products {
+    padding: var(--spacing-lg);
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius-lg);
+}
+
+.main-products {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-side-left {
+    display: grid;
+    gap: var(--spacing-md);
+    width: 70%;
+    margin-right: var(--spacing-md);
+}
+
+.main-side-right {
+    width: 30%;
+}
+
+.product-c,
+.sec-resume,
+.discount-sec {
+    display: flex;
+    justify-content: space-between;
+}
+
+.style-product {
+    padding: var(--spacing-md);
+    background-color: var(--text-white-color);
+    border-radius: var(--border-radius-md);
+    width: 100%;
+}
+
+.product-c.style-product {
+    margin-bottom: var(--spacing-sm);
+}
+
+
+.product-desc,
+.opts {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.product-opts {
+    display: grid;
+    align-items: start;
+    margin: 0 var(--spacing-lg) 0 0;
+}
+
+.product-img img {
+    max-width: 150px;
+    border-radius: var(--border-radius-sm);
+}
+
+.subtitle-products p {
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    color: var(--text-dark-color);
+}
+
+/* Resumo do Pedido */
+.title-balance {
+    margin: 0 auto var(--spacing-md);
+}
+
+.sec-resume-total {
+    margin: var(--spacing-md) 0;
+}
+
+.sec-resume-frete {
+    margin: 4px 0;
+}
+
+button.btn-style-01 {
+    width: 100%;
+}
+
+.title-sec-info {
+    font-weight: 400;
+    padding: 0 0 var(--spacing-sm) var(--spacing-sm);
+}
+
+/* Pagamentos */
+.payments .payment-method .payment-methods {
+    cursor: pointer;
+    margin-bottom: var(--spacing-md);
+}
+
+.payments .payment-method .payment-methods:hover {
+    background-color: var(--hover-color) !important;
+}
+
+.payment-methods h4 {
+    margin-bottom: var(--spacing-md);
+}
+
+input[type="radio"] {
+    position: absolute;
+    visibility: hidden;
+}
+
+.card-method {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.card-method input[type="text"] {
+    flex: 1 1 calc(50% - 8px)
+}

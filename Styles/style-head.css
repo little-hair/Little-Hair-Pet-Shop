@@ -1,0 +1,28 @@
+/* Estilo da Barra de Navegação exibida quando o tamanho da janela for inferior a 590px */
+.rigth-bar-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    position: absolute;
+    top: 80px;
+    right: 0;
+    padding-bottom: var(--spacing-lg);
+    border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+    z-index: 1000;
+}
+
+.rigth-bar-menu nav.nav {
+    margin-bottom: var(--spacing-md);
+}
+
+.rigth-bar-menu nav.nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.rigth-bar-menu nav.nav ul li, .rigth-bar-menu button {
+    width: 100%;
+}
+
+
+/* Fim do estilo da Barra de Navegação exibida quando o tamanho da janela for inferior a 590px */

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Styles/style.css">
+    <link rel="stylesheet" href="./Styles/style-media-queries.css">
+    <link rel="stylesheet" href="Styles/style-head.css">
+    <!--  Espaço dos links de Fontes. Não altere as urls  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nerko+One&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!--  Espaço dos links de Fontes. Não altere as urls  -->
+    <title>Litlle Hair - Pet Shop</title>
+</head>
+
+<body>
+    <!-- Cabeçalho com a barra de navegação -->
+    <header>
+        <div class="logo">
+            <img src="./Images/Logo.png" alt="Little Hair">
+        </div>
+
+        <nav class="nav">
+            <ul>
+                <li class="hover">
+                    <div class="home icon on active">
+                        <img src="./Images/Home.png" class="" alt="Home (Início)">
+                    </div>
+                    <a href="./Index.html">Início</a>
+                </li>
+
+                <li class="hover">
+                    <div class="store icon off">
+                        <img src="./Images/Store.png" class="" alt="Loja para pets">
+                    </div>
+                    <a href="./Pet-Store.html">Pet Store</a>
+                </li>
+
+                <li class="hover">
+                    <div class="plans icon off">
+                        <img src="./Images/Pet.png" class="" alt="Pet Planos">
+                    </div>
+                    <a href="/Plans.html">Pet Planos</a>
+                </li>
+
+                <li class="hover">
+                    <div class="indicate icon off">
+                        <img src="./Images/Conta.png" class="" alt="Indique o Pet Shop e Ganhe">
+                    </div>
+                    <a href="./Share.html">Indique e Ganhe</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="last-buttons">
+            <div class="link-accounts">
+                <a href="./Accounts.html" class="btn-style-01">Criar ou Entrar</a>
+            </div>
+
+            <div class="cart icon hover link" data-url="Cart">
+                <img src="./Images/Cart.png" alt="Little Hair">
+            </div>
+
+            <div class="burger icon hover">
+                <img src="./Images/Icons/Burger.png" alt="Botão de Opções">
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <section class="banner ads">
+            <img src="./Images/Banner.png" alt="Banner - Aqui temos um plano de Saúde
+            pensado só para seu PET">
+        </section>
+
+        <!-- Categorias -->
+        <section class="main">
+            <h3>Principais Categorias</h3>
+
+            <section class="flex-content">
+                <article class="category cat-01 link" data-name="Racao" data-url="Pet-Store" title="Rações">
+                    <h2 class="cat-title">Rações</h2>
+                    <!-- As imagens devem ser colocadas via css -->
+                </article>
+
+                <article class="category cat-02 link" data-name="Acessorios" data-url="Pet-Store" title="Acessórios">
+                    <h2 class="cat-title">Acessórios</h2>
+                    <!-- As imagens devem ser colocadas via css -->
+                </article>
+
+                <article class="category cat-03 link" data-name="DayCare" data-url="Schedule" title="Day Care & Hospedagem">
+                    <h2 class="cat-title">Day Care & Hospedagem</h2>
+                    <!-- As imagens devem ser colocadas via css -->
+                </article>
+
+                <article class="category cat-04 link" data-name="Banho&Tosa" data-url="Schedule" title="Banho & Tosa">
+                    <h2 class="cat-title">Banho & Tosa</h2>
+                    <!-- As imagens devem ser colocadas via css -->
+                </article>
+
+                <article class="category cat-05 link" data-name="Clube" data-url="Plans" title="Clube de Assinatura">
+                    <h2 class="cat-title">Clube de Assinatura</h2>
+                    <!-- As imagens devem ser colocadas via css -->
+                </article>
+
+                <article class="category cat-06 link" data-name="Plano-de-Saude" data-url="Plans" title="Plano de Saúde">
+                    <h2 class="cat-title">Plano de Saúde</h2>
+                    <!-- As imagens devem ser colocadas via css -->
+                </article>
+
+                <article class="category cat-07 link" data-name="Convide" data-url="Share" title="Convide e Ganhe">
+                    <div class="content">
+                        <h1 class="cat-title">Convide e Ganhe</h1>
+                        <p class="cat-desc">Receba benefícios ao indicar nossos servicos para outros.<br>Clique para
+                            saber
+                            mais.
+                        </p>
+                    </div>
+                    <!-- As imagens devem ser colocadas via css -->
+                </article>
+            </section>
+        </section>
+
+    </main>
+
+    <!-- Seção de apresentação dos Cookies -->
+    <section class="cookies">
+    </section>
+
+    <!-- Barra de Menu Lateral Direita -->
+    <aside class="rigth-bar-menu off">
+    </aside>
+
+    <!-- Rodapé com newsletter -->
+    <footer>
+    </footer>
+</body>
+<script src="./Scripts/Script.js"></script>
+<script src="./Scripts/Global-Script.js"></script>
+<script src="./Scripts/Elements/Footer.js"></script>
+<script src="./Scripts/Elements/Menu.js"></script>
+
+</html>
