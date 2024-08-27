@@ -1,4 +1,5 @@
 import fetchProducts from './DataBase.js';
+import buildProductsWindow from './LoadProducts.js';
 
 const searchIpt = document.querySelector('.ipt-search');
 const form = document.querySelector('#form-search');
@@ -40,7 +41,7 @@ fetchProducts().then(allProducts => {
             console.log('Nenhum produto encontrado');
         } else {
             const length = listProductsFound.length;
-            displaySearchResults(listProductsFound, length);
+            displaySearchResults(allProducts, listProductsFound, length);
         };
 
         // Limpa a lista de produtos encontrados
@@ -55,12 +56,12 @@ function searchMatches(name, searchTerms) {
 };
 
 // Função para exibir os resultados da busca na interface do usuário
-function displaySearchResults(products, length) {
+function displaySearchResults(allProducts, products, length) {
     const containerMain = document.querySelector('.result-products');
     const resultsContainer = document.querySelector('.results-products');
     const backProductsContainer = document.querySelector('.back-main-products');
 
-    resultsContainer.innerHTML = ''; // Limpa os resultados anteriores
+    resultsContainer.innerHTML = '';
 
     products.forEach(product => {
         const productElement = document.createElement('article');
@@ -75,7 +76,7 @@ function displaySearchResults(products, length) {
             <span class="product-img">
                 <img src="${product.url}" alt="${product.name}">
             </span>
-
+    
             <div class="product-desc">
                 <p class="text-desc">${product.name}</p>
                 <div class="product-price">
@@ -90,7 +91,7 @@ function displaySearchResults(products, length) {
             element.classList.add('off');
         });
 
-        document.getElementById('title-results-products').textContent = `Produto(s) escontrado(s): ${length}`;
+        document.getElementById('title-results-products').textContent = `Produto(s) encontrado(s): ${length}`;
         resultsContainer.appendChild(productElement);
 
         // Ouvinte de evento do botão voltar do resultado dos produtos:
@@ -99,6 +100,29 @@ function displaySearchResults(products, length) {
             selectCloseElements.forEach((element) => {
                 element.classList.remove('off');
             });
-        })
+        });
     });
-};
+
+    tt(allProducts)
+
+}
+
+function tt(allProducts) {
+    const products = document.querySelectorAll('.results-products .product-i');
+
+    products.forEach((i) => {
+        const productCode = i.getAttribute('data-code');
+        const productAcess = `product${productCode}`;
+        const productData = allProducts[productAcess];
+
+        i.setAttribute('data-name', productData.name);
+        i.setAttribute('data-tags', productData.tags);
+        i.setAttribute('data-category', productData.category);
+
+        i.addEventListener('click', () => {
+            buildProductsWindow(productData, allProducts);
+        });
+    });
+
+}
+

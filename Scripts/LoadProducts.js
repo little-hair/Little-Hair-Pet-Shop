@@ -21,7 +21,7 @@ function loadProductsData(allProducts, selector) {
         i.setAttribute('data-category', productData.category);
         i.innerHTML = loadProducts(productData);
 
-        i.addEventListener('click', () => {
+        i.addEventListener('click', (i) => {
             buildProductsWindow(productData, allProducts);
         });
     });
@@ -39,7 +39,8 @@ function loadProducts({ name, price, oldprice, url }) {
             <span class="price">R$ ${price}</span>
             <span class="old-price">R$ ${oldprice}</span>
         </div>
-    </div>`;
+    </div>
+    `;
 }
 
 // Constrói a janela dos produtos
@@ -142,7 +143,6 @@ function buildProductsWindow(productData, allProducts) {
 
     findSimilarProducts(allProducts, productData);
 
-    amountProducts();
 
     const closeModal = document.querySelector(".close-modal");
     closeModal.addEventListener('click', () => {
@@ -151,7 +151,9 @@ function buildProductsWindow(productData, allProducts) {
         modal.innerHTML = '';
     });
 
+    amountProducts();
     cart();
+
 }
 
 // Buscar produtos semelhantes
@@ -181,20 +183,24 @@ function findSimilarProducts(allProducts, thisProduct) {
 
 // Contar quantidade de produtos
 function amountProducts() {
-    // Variáveis
     const decrease = document.querySelector('.decrease-quantity');
     const increase = document.querySelector('.increase-quantity');
     const quantity = document.querySelector('#quantity');
-    var valueCount = 1;
+    
+    // Verificar se os botões existem
+    if (!increase || !decrease || !quantity) {
+        console.error('Elementos de quantidade não encontrados');
+        return;
+    }
+    
+    let valueCount = 1;
 
-    // Adiciona evento de clique ao botão de aumentar a quantidade
     increase.addEventListener('click', (e) => {
         e.preventDefault();
         valueCount += 1;
         quantity.value = valueCount;
-    });
+    }); 
 
-    // Adiciona evento de clique ao botão de diminuir a quantidade
     decrease.addEventListener('click', (e) => {
         e.preventDefault();
         if (valueCount > 1) {
@@ -203,5 +209,6 @@ function amountProducts() {
         }
     });
 }
+
 
 export default amountProducts;
