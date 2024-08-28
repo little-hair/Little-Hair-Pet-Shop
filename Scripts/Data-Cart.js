@@ -1,3 +1,5 @@
+import alertMessage from './Script.js';
+
 function cart() {
     const submitForm = document.querySelector('form.add-cart .btn-style-01');
 
@@ -10,11 +12,7 @@ function cart() {
         const code = form.getAttribute('data-code');
         const quantity = Form.get('quantity');
 
-        const detailsScreen = document.querySelector('body');
-        const alertAddToCart = document.createElement('div');
-        alertAddToCart.classList.add('alert-cart');
-        alertAddToCart.innerHTML = `<p class="alert-add-cart">Produto adicionado ao carrinho!</p>`;
-        detailsScreen.appendChild(alertAddToCart);
+        alertMessage("Produto adicionado ao carrinho!")
 
         // Enviar dados do cart para o localStorage
         const cartProducts = JSON.parse(localStorage.getItem('cartProducts')) || [];
@@ -32,12 +30,6 @@ function cart() {
 
         // Limpar formulário
         form.reset();
-
-        // Destruir alert após 5 segundos
-        setTimeout(() => {
-            const alertCart = document.querySelector('.alert-cart');
-            alertCart.remove();
-        }, 5000);
     });
 };
 

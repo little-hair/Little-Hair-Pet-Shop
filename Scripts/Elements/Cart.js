@@ -1,5 +1,6 @@
 import fetchProducts from '../DataBase.js';
-import amountProducts from '../LoadProducts.js';
+import { amountProducts } from '../LoadProducts.js';
+
 
 fetchProducts().then(allProducts => {
     if (!allProducts) return; // Verifica se houve erro na requisição

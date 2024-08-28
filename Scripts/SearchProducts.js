@@ -1,59 +1,107 @@
 import fetchProducts from './DataBase.js';
-import buildProductsWindow from './LoadProducts.js';
+import alertMessage from './Script.js';
+import { loadProductsData } from './LoadProducts.js';
 
 const searchIpt = document.querySelector('.ipt-search');
 const form = document.querySelector('#form-search');
 const products = document.querySelectorAll('.product-i');
+const input = document.querySelectorAll('.sec-category input');
+const clearFilterBtn = document.querySelector('.filter-btn .ipt-filter');
 
+// Chama a função para limpar o filtro
+clearFilterBtn.addEventListener('click', () => {
+    clearFilter();
+    removeParametrosURL();
+});
+
+// Carregar os dados
 fetchProducts().then(allProducts => {
-    if (!allProducts) return; // Verifica se houve erro na requisição
+    if (!allProducts) return;
+
+    // Atribuir categoria da URL
+    assignCategory(allProducts);
 
     // Event listener para o input de busca
     form.addEventListener('submit', (e) => {
         e.preventDefault();
+        const formData = new FormData(form);
+        const searchValue = formData.get('ipt-search').toLowerCase().trim();
 
-        const Form = new FormData(form);
-        const searchValue = Form.get('ipt-search').toLowerCase().trim();
-        const searchTerms = searchValue.split(' ');
-        let listProductsFound = [];
-
-        // Verifica se há um termo de busca
         if (searchValue.length < 1) {
-            alert('Digite um termo para pesquisar!');
-            return
+            alertMessage('Digite um termo para pesquisar!');
+            return;
+        } else {
+            // Adicionar o termo de busca à URL e atualizar a lista de produtos
+            updateUrlParam('search', searchValue);
+            search(allProducts, searchValue.split(' '));
         }
 
-        // Limpa o input de busca após a busca
         searchIpt.value = '';
+    });
 
-        products.forEach((i) => {
-            const productCode = i.getAttribute('data-code');
-            const productAcess = `product${productCode}`;
-            const productData = allProducts[productAcess];
+    // Event listener para os filtros de categoria
+    input.forEach(term => {
+        term.addEventListener('click', (e) => {
+            const filter = e.target.value.toLowerCase().trim();
+            updateUrlParam('category', filter);
+            search(allProducts, [filter]);
 
-            // Chama a função para fazer a pesquisa
-            if (productData && searchMatches(productData.name, searchTerms)) {
-                listProductsFound.push(productData);
-            }
+            input.forEach(i => i.classList.remove('selected'));
+            term.classList.toggle('selected');
         });
-
-        if (listProductsFound.length < 1) {
-            console.log('Nenhum produto encontrado');
-        } else {
-            const length = listProductsFound.length;
-            displaySearchResults(allProducts, listProductsFound, length);
-        };
-
-        // Limpa a lista de produtos encontrados
-        listProductsFound = [];
     });
 });
+
+// Função para atribuir categoria da URL
+function assignCategory(allProducts) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category')?.toLowerCase().trim();
+    const searchValue = urlParams.get('search')?.toLowerCase().trim();
+
+    if (category) {
+        search(allProducts, [category]);
+    } else if (searchValue) {
+        search(allProducts, searchValue.split(' '));
+    } else {
+        displayProducts(allProducts);
+    }
+}
+
+// Função para criar a pesquisa
+function search(allProducts, terms) {
+    let listProductsFound = [];
+
+    products.forEach(i => {
+        const productCode = i.getAttribute('data-code');
+        const productAcess = `product${productCode}`;
+        const productData = allProducts[productAcess];
+
+        if (productData) {
+            const matchesSearch = searchMatches(productData.name, terms) ||
+                searchMatches(productData.tags, terms) ||
+                searchMatches(productData.category, terms);
+
+            if (matchesSearch) {
+                listProductsFound.push(productData);
+            }
+        }
+    });
+
+    if (listProductsFound.length < 1) {
+        alertMessage("Nenhum produto encontrado");
+    } else {
+        const length = listProductsFound.length;
+        displaySearchResults(allProducts, listProductsFound, length);
+    }
+
+    listProductsFound = [];
+}
 
 // Função para verificar se o nome do produto contém todos os termos de busca
 function searchMatches(name, searchTerms) {
     const nameLowerCase = name.toLowerCase();
     return searchTerms.some(term => nameLowerCase.includes(term));
-};
+}
 
 // Função para exibir os resultados da busca na interface do usuário
 function displaySearchResults(allProducts, products, length) {
@@ -76,7 +124,7 @@ function displaySearchResults(allProducts, products, length) {
             <span class="product-img">
                 <img src="${product.url}" alt="${product.name}">
             </span>
-    
+
             <div class="product-desc">
                 <p class="text-desc">${product.name}</p>
                 <div class="product-price">
@@ -87,42 +135,44 @@ function displaySearchResults(allProducts, products, length) {
         `;
 
         containerMain.classList.remove('off');
-        selectCloseElements.forEach((element) => {
-            element.classList.add('off');
-        });
+        selectCloseElements.forEach(element => element.classList.add('off'));
 
         document.getElementById('title-results-products').textContent = `Produto(s) encontrado(s): ${length}`;
         resultsContainer.appendChild(productElement);
 
-        // Ouvinte de evento do botão voltar do resultado dos produtos:
         backProductsContainer.addEventListener('click', () => {
-            containerMain.classList.add('off');
-            selectCloseElements.forEach((element) => {
-                element.classList.remove('off');
-            });
+            removeParametrosURL();
+            clearFilter();
         });
     });
 
-    tt(allProducts)
-
+    loadProductsData(allProducts, '.results-products .product-i');
 }
 
-function tt(allProducts) {
-    const products = document.querySelectorAll('.results-products .product-i');
+// Função para limpar os filtros
+function clearFilter() {
+    const containerMain = document.querySelector('.result-products');
+    const selectCloseElements = document.querySelectorAll('.sec-prod');
 
-    products.forEach((i) => {
-        const productCode = i.getAttribute('data-code');
-        const productAcess = `product${productCode}`;
-        const productData = allProducts[productAcess];
+    containerMain.classList.add('off');
+    selectCloseElements.forEach(element => element.classList.remove('off'));
 
-        i.setAttribute('data-name', productData.name);
-        i.setAttribute('data-tags', productData.tags);
-        i.setAttribute('data-category', productData.category);
-
-        i.addEventListener('click', () => {
-            buildProductsWindow(productData, allProducts);
-        });
-    });
-
+    input.forEach(i => i.classList.remove('selected'));
 }
 
+// Função para remover todos os parâmetros da URL
+function removeParametrosURL() {
+    const urlBase = window.location.origin + window.location.pathname;
+    window.history.pushState({}, '', urlBase);
+}
+
+// Função para atualizar os parâmetros da URL sem recarregar a página
+function updateUrlParam(key, value) {
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set(key, value);
+
+    const newUrl = `${window.location.pathname}?${urlParams.toString()}`;
+    window.history.pushState({}, '', newUrl);
+}
+
+export default search;

@@ -1,3 +1,4 @@
+import alertMessage from '../Script.js';
 const footer = document.querySelector('footer');
 
 // Add a footer to the body
@@ -5,9 +6,9 @@ footer.innerHTML = `
     <!-- Footer - Rodapé -->
     <div class="newsletter">
         <h3>Cadastre-se para receber nossas promoções e novidades!</h3>
-        <form>
-            <input type="email" placeholder="Seu e-mail">
-            <input type="text" placeholder="Qual seu Pet">
+        <form class="newsletter-form">
+            <input type="email" name="news-email" placeholder="Seu e-mail" required>
+            <input type="text" name="news-pet" placeholder="Qual seu Pet" required>
             <button type="submit" class="btn-style-01">Cadastrar</button>
         </form>
         <p><small>Ao se cadastrar você concorda com a nossa <a href="#">política de privacidade.</a></small></p>
@@ -63,4 +64,14 @@ footer.innerHTML = `
                 </div>
             </div>
         </div>
-    </div>`;
+    </div>
+`;
+
+const getForm = document.querySelector('form.newsletter-form')
+getForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alertMessage("E-mail cadastrado!");
+
+    document.querySelector('input[name="news-email"]').value = "";
+    document.querySelector('input[name="news-pet"]').value = "";
+})

@@ -37,6 +37,11 @@ Scaneei o QR Code ou [Clique Aqui](https://www.figma.com/design/nXvWjWgKHXuPZusn
 
 ## Notas de Atualização
 
-* **v3.6.2 (15/09/2023):**
-    * Melhoria da responsividade para dispositivos móveis
-    * Correção de bugs no processo de checkout
+* **v3.7.0 (27/08/2024):**
+    * Adição da funcionalidade de busca em categorias
+    * Correção do bug em produtos buscados
+    * Correção de bugs na lógica
+
+    * **v3.6.2 (26/08/2024):**
+        * Melhoria da responsividade para dispositivos móveis
+        * Correção de bugs no processo de checkout

@@ -19,6 +19,12 @@
         rel="stylesheet">
 
     <!--  Espaço dos links de Fontes. Não altere as urls  -->
+    <!-- FAVICONS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+    <link rel="manifest" href="./favicons/site.webmanifest">
+    <!-- FAVICONS -->
     <title>Little Hair - Store</title>
 </head>
 
@@ -138,51 +144,18 @@
                 </div>
 
                 <div class="filter-btn">
-                    <label for="fish-btn" class="ipt-filter">
-                        <input type="button" name="fish-btn" value="Peixes">
+                    <label for="accessories-btn" class="ipt-filter">
+                        <input type="button" name="accessories-btn" value="Acessórios">
                     </label>
                 </div>
 
                 <div class="filter-btn">
-                    <label for="hamster-btn" class="ipt-filter">
-                        <input type="button" name="hamster-btn" value="Hamster">
+                    <label for="food-btn" class="ipt-filter">
+                        <input type="button" name="food-btn" value="Ração">
                     </label>
                 </div>
             </section>
 
-            <section class="sec-price">
-                <p class="filter-title">Faixa de Preço</p>
-
-                <div class="filter-btn">
-                    <div class="label">
-                        <label for="ipt-price-01" class="ipt-filter">
-                            <input type="checkbox" name="ipt-price-01">
-                            <span>Até R$ 50</span>
-                        </label>
-                    </div>
-
-                    <div class="label">
-                        <label for="ipt-price-02" class="ipt-filter">
-                            <input type="checkbox" name="ipt-price-02">
-                            <span>De R$ 51 a R$ 100</span>
-                        </label>
-                    </div>
-
-                    <div class="label">
-                        <label for="ipt-price-03" class="ipt-filter">
-                            <input type="checkbox" name="ipt-price-03">
-                            <span>De R$ 101 a R$ 150</span>
-                        </label>
-                    </div>
-
-                    <div class="label">
-                        <label for="ipt-price-04" class="ipt-filter">
-                            <input type="checkbox" name="ipt-price-04">
-                            <span>De R$ 151 a R$ 200</span>
-                        </label>
-                    </div>
-                </div>
-            </section>
         </aside>
 
         <!-- Produtos -->
@@ -241,11 +214,11 @@
     </footer>
 
 </body>
-<script src="./Scripts/Script.js"></script>
-<script src="./Scripts/Elements/Footer.js"></script>
-<script src="./Scripts/Elements/Menu.js"></script>
+
+<script type="module" src="./Scripts/Script.js"></script>
+<script type="module" src="./Scripts/Elements/Footer.js"></script>
 <script type="module" src="./Scripts/DataBase.js" crossorigin="anonymous"></script>
 <script type="module" src="./Scripts/LoadProducts.js"></script>
 <script type="module" src="./Scripts/SearchProducts.js"></script>
-
+<script src="./Scripts/Elements/Menu.js"></script>
 </html>

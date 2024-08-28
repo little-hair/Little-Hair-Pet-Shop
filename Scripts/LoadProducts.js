@@ -3,7 +3,8 @@ import cart from './Data-Cart.js';
 
 // Fetch dos dados dos produtos
 fetchProducts().then(allProducts => {
-    if (!allProducts) return; // Verifica se houve erro na requisição
+    // Verifica se houve erro na requisição
+    if (!allProducts) return;
     loadProductsData(allProducts, '.product-i');
 });
 
@@ -186,20 +187,20 @@ function amountProducts() {
     const decrease = document.querySelector('.decrease-quantity');
     const increase = document.querySelector('.increase-quantity');
     const quantity = document.querySelector('#quantity');
-    
+
     // Verificar se os botões existem
     if (!increase || !decrease || !quantity) {
         console.error('Elementos de quantidade não encontrados');
         return;
     }
-    
+
     let valueCount = 1;
 
     increase.addEventListener('click', (e) => {
         e.preventDefault();
         valueCount += 1;
         quantity.value = valueCount;
-    }); 
+    });
 
     decrease.addEventListener('click', (e) => {
         e.preventDefault();
@@ -210,5 +211,4 @@ function amountProducts() {
     });
 }
 
-
-export default amountProducts;
+export { amountProducts, loadProductsData };

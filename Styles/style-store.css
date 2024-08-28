@@ -136,6 +136,10 @@ aside.filter section {
     transition: background ease-in-out 0.5s;
 }
 
+.ipt-filter input.selected {
+    background-color: var(--secondary-color);
+}
+
 span {
     line-height: 0;
 }

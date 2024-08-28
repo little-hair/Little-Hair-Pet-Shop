@@ -1,8 +1,6 @@
 // Variáveis para o código
 const element_li = document.querySelectorAll('header li.hover');
-const event_off = document.querySelectorAll('#off');
-const event_on = document.querySelectorAll('.on');
-const categories = document.querySelectorAll('.link');
+const categories = document.querySelectorAll('.category');
 
 // Criando a animação na barra de navegação.
 element_li.forEach((i) => {
@@ -30,7 +28,32 @@ categories.forEach((i) => {
 
 // Permitindo que elementos sejam clicáveis com url
 categories.forEach((i) => {
-    i.addEventListener('click', () => {
-        window.location.href = `${i.getAttribute('data-url')}.html`;
-    });
+    if (i.classList.contains('link')) {
+        i.addEventListener('click', () => {
+            window.location.href = `${i.getAttribute('data-url')}.html`;
+        });
+    } else {
+        i.addEventListener('click', () => {
+            const dataCategory = i.getAttribute('data-name');
+            const term = dataCategory.toLowerCase().trim();
+            window.location.href = `${i.getAttribute('data-url')}.html?category=${term}`;
+        });
+    };
 });
+
+function alertMessage(message) {
+    // Cria um novo alert com a mensagem passada como parâmetro e adiciona-o ao body do documento
+    const detailsScreen = document.querySelector('body');
+    const alertAddToCart = document.createElement('div');
+    alertAddToCart.classList.add('alert-cart');
+    alertAddToCart.innerHTML = `<p class="alert-add-cart">${message}</p>`;
+    detailsScreen.appendChild(alertAddToCart);
+
+    // Destrói o alert após 3 segundos
+    setTimeout(() => {
+        const alertCart = document.querySelector('.alert-cart');
+        alertCart.remove();
+    }, 3800);
+};
+
+export default alertMessage;
