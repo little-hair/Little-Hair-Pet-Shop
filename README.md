@@ -42,6 +42,5 @@ Scaneei o QR Code ou [Clique Aqui](https://www.figma.com/design/nXvWjWgKHXuPZusn
     * Correção do bug em produtos buscados
     * Correção de bugs na lógica
 
-    * **v3.6.2 (26/08/2024):**
-        * Melhoria da responsividade para dispositivos móveis
-        * Correção de bugs no processo de checkout
+    * **v3.7.1 (27/08/2024):**
+        * Pequena correção na lógica do footer
