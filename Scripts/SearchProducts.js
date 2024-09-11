@@ -62,8 +62,6 @@ function assignCategory(allProducts) {
         search(allProducts, [category]);
     } else if (searchValue) {
         search(allProducts, searchValue.split(' '));
-    } else {
-        displayProducts(allProducts);
     }
 }
 

@@ -37,10 +37,11 @@ Scaneei o QR Code ou [Clique Aqui](https://www.figma.com/design/nXvWjWgKHXuPZusn
 
 ## Notas de Atualização
 
-* **v3.7.0 (27/08/2024):**
-    * Adição da funcionalidade de busca em categorias
-    * Correção do bug em produtos buscados
-    * Correção de bugs na lógica
+* **v3.7.2 (11/09/2024):**
+    * Atualização na lógica de busca
+    * Correção de bug
 
-    * **v3.7.1 (27/08/2024):**
-        * Pequena correção na lógica do footer
+    * **v3.7.0 (27/08/2024):**
+        * Adição da funcionalidade de busca em categorias
+        * Correção do bug em produtos buscados
+        * Correção de bugs na lógica
